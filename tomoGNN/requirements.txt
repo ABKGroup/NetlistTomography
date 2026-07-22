@@ -1,0 +1,40 @@
+# requirements.txt
+# Minimal pinned requirements for Netlist Tomography
+#
+# Install with:
+#   pip install -r requirements.txt
+#
+# For PyTorch with CUDA 11.8, use:
+#   pip install -r requirements.txt \
+#     --extra-index-url https://download.pytorch.org/whl/cu118
+#
+# For PyTorch Geometric extensions:
+#   pip install pyg-lib torch-scatter torch-sparse \
+#     -f https://data.pyg.org/whl/torch-2.1.0+cu118.html
+#
+
+# Core ML Framework
+torch==2.1.0
+torchvision==0.16.0
+torchaudio==2.1.0
+
+# Graph Neural Networks
+torch-geometric==2.7.0
+# Note: torch-scatter, torch-sparse, pyg-lib must be installed separately
+# from PyG wheel repository (see command above)
+
+# Data Processing
+# CRITICAL: NumPy must be <2.0 for PyTorch 2.1.0 compatibility
+numpy<2.0
+pandas==2.3.3
+scikit-learn==1.7.2
+
+# Clustering
+hdbscan==0.8.40
+
+# Graph Libraries (optional - for Leiden clustering)
+igraph==0.11.9
+leidenalg==0.10.2
+
+# Utilities
+tqdm==4.67.1
